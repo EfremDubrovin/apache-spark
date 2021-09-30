@@ -1,0 +1,4 @@
+Ivan 5.5
+Asen 6.0
+Petur 5.0
+Vanko 1.0

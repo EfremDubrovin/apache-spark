@@ -16,3 +16,5 @@ in the local UI you can view that your job was executed
 ```
 http://localhost:8080/
 ```
+
+spark-submit --class eu.deltasource.SparkApplication --master spark://localhost:7077 /bitnami/spark/spark.jar 100
