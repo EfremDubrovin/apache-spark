@@ -1,7 +1,7 @@
 # apache-spark
 
 test project deployed to a docker container cluster with one master and two worker nodes
-note first you need to build the jar which is mentioned in the configuration in the main app "target/spark.jar"
+note first you need to build the jar which is mentioned in the configuration in the main app `target/spark.jar`
 using
 ```shell
 mvn clean install
