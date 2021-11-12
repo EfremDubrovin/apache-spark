@@ -16,8 +16,8 @@ public class SparkApplication {
 		SparkConf conf = new SparkConf()
 //			.setJars(new String[]{"target/spark.jar"})
 			.setAppName("test_sum")
-			.setMaster("spark://spark:7077");
-//			.setMaster("local");
+//			.setMaster("spark://spark:7077");
+			.setMaster("local[*]");
 		JavaSparkContext sc = new JavaSparkContext(conf);
 
 		// Parallelized collections
@@ -28,7 +28,8 @@ public class SparkApplication {
 		log.info("The sum of elements is: {}", sum);
 
 		// External dataset
-		JavaRDD<String> lines = sc.textFile("/bitnami/spark/data.txt");
+//		JavaRDD<String> lines = sc.textFile("/bitnami/spark/data.txt");
+		JavaRDD<String> lines = sc.textFile("/Users/efrem/Documents/project/spark/src/main/resources/data.txt");
 		// Note data.txt should be accessible from all worker nodes (see mounted volumes)
 		JavaRDD<Integer> lineLengths = lines.map(String::length);
 		int totalLength = lineLengths.reduce(Integer::sum);
